@@ -128,10 +128,10 @@
 	function bubbleSort(canvas, context, arr) {
 		let length = arr.length;
 		let times = 0;
-		console.log(arr);
+		// console.log(arr);
 	    for(let i = 0; i < length - 1; i ++) {
-	        for(let j = length - 2 - i; j > i; j --) {
-	            if(arr[j] > arr[j + 1]) {
+	        for(let j = length - 1; j > i; j --) {
+	            if(arr[j] < arr[j - 1]) {
 	                let temp = arr[j];
 	                arr[j] = arr[j - 1];
 	                arr[j - 1] = temp;
@@ -140,12 +140,12 @@
 	            times ++;
                 let _arr = CopyArr(arr);
 	        	setTimeout(function() {
-	        		drawArray(canvas, context, _arr, i - 1, j);
+	        		drawArray(canvas, context, _arr, i - 1, j - 1);
 	        	}, 500 * times);
 
 	        }
 	    }
-	    console.log(arr);
+	    // console.log(arr);
 	    return arr;
 	}
 
